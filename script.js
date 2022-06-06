@@ -39,9 +39,6 @@ const btns = numbers.addEventListener('click', (event) => {
             currentResult.textContent = currentResult.textContent + event.target.textContent.toString();
             prevTemp = currentResult.textContent;
         }
-        
-        
-        
         // console.log(event.target);
         // console.log(event.target.textContent);
         /*previousResult.textContent = event.target.textContent;
@@ -108,6 +105,11 @@ function processFinal(){
             userChoices.splice(operationFinder,3);
         }else if(userChoices.includes('/')){
             let operationFinder = userChoices.indexOf('/');
+            if(parseInt(userChoices[operationFinder+1]) === 0){
+                alert("Infinity")
+                userChoices = [];
+            }
+                break;
             totalResult = operate(userChoices[operationFinder],  parseInt(userChoices[operationFinder-1]),parseInt(userChoices[operationFinder+1]));
             userChoices.splice(operationFinder-1,0,totalResult);
             userChoices.splice(operationFinder,3);
