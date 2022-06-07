@@ -100,7 +100,7 @@ function processFinal(){
     while(userChoices.length !== 1){
         if(userChoices.includes('*')){
            let operationFinder = userChoices.indexOf('*');
-            totalResult = operate(userChoices[operationFinder], parseInt(userChoices[operationFinder-1]),  parseInt(userChoices[operationFinder+1]));
+            totalResult = operate(userChoices[operationFinder], parseFloat(userChoices[operationFinder-1]),  parseFloat(userChoices[operationFinder+1]));
             userChoices.splice(operationFinder-1,0,totalResult);
             userChoices.splice(operationFinder,3);
         }else if(userChoices.includes('/')){
@@ -110,17 +110,17 @@ function processFinal(){
                 userChoices = [];
             }
                 break;
-            totalResult = operate(userChoices[operationFinder],  parseInt(userChoices[operationFinder-1]),parseInt(userChoices[operationFinder+1]));
+            totalResult = operate(userChoices[operationFinder],  parseFloat(userChoices[operationFinder-1]),parseFloat(userChoices[operationFinder+1]));
             userChoices.splice(operationFinder-1,0,totalResult);
             userChoices.splice(operationFinder,3);
         }else if(userChoices.includes('+')){
             let operationFinder = userChoices.indexOf('+');
-            totalResult = operate(userChoices[operationFinder],  parseInt(userChoices[operationFinder-1]), parseInt(userChoices[operationFinder+1]));
+            totalResult = operate(userChoices[operationFinder],  parseFloat(userChoices[operationFinder-1]), parseFloat(userChoices[operationFinder+1]));
             userChoices.splice(operationFinder-1,0,totalResult);
             userChoices.splice(operationFinder,3);
         }else{
             let operationFinder = userChoices.indexOf('-');
-            totalResult = operate(userChoices[operationFinder],  parseInt(userChoices[operationFinder-1]), parseInt(userChoices[operationFinder+1]));
+            totalResult = operate(userChoices[operationFinder],  parseFloat(userChoices[operationFinder-1]), parseFloat(userChoices[operationFinder+1]));
             userChoices.splice(operationFinder-1,0,totalResult);
             userChoices.splice(operationFinder,3);
         }
