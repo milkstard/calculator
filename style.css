@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Games;
+    src: url(./fonts/Games.ttf);
+}
+
 *{
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
@@ -21,6 +26,7 @@
     font-size: 6rem;
     color: black;
     padding: 10px;
+    font-family: Games;
 }
 
 .second-content{ /*child of flex-content*/
@@ -63,9 +69,16 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     width: 80%;
-    border: 40px solid black;
     border-radius: 0 0 20px 20px;
     box-shadow: 20px 20px 50px grey;
+    border: 1px solid black;
+    gap: 2px;
+}
+
+.clear, .btn, .operator{
+    font-weight: bold;
+    font-family:monospace;
+    box-shadow: 1px 1px 10px rgb(244, 242, 242);
 }
 
 .operator,.btn{
